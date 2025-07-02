@@ -1,7 +1,6 @@
 <template>
   <div class="header-top">
     <div class="container">
-      <img src="@/assets/logo.png" alt="Logo" class="logo">
       <h1>"Верхний хедер"</h1>
       <button class="login-btn">Войти</button>
     </div>
@@ -26,11 +25,8 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
 }
-.logo {
-  height: 40px;
-}
+
 .login-btn {
-  background: #42b983;
   color: white;
   border: none;
   padding: 8px 15px;

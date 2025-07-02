@@ -1,3 +1,15 @@
+:root {
+  --color-white: #fff;
+  --bg-color-secondary: #f7f7f7;
+  --color-primary: #151542;
+  --color-secondary: #898989;
+  --b-color-primary: #e4e4e4;
+  --b-color-secondary: #151542;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 28px;
+  --font-size-lg: 32px;
+}
 
 body {
   margin: 0;
@@ -5,3 +17,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-primary);
+}

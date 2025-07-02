@@ -25,8 +25,9 @@ export default {
     height: 18px;
 }
 h4,p{
+    margin: 0;
     color: whitesmoke;
-    line-height: 21px;
+    line-height: 33px;
 }
 h4{
     font-size: 16px;

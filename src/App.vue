@@ -7,11 +7,13 @@
 
 <script>
 import Header from '@/components/header/Header.vue'
+import Body from '@/components/body/Body.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Body
   }
 }
 </script>

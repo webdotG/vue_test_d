@@ -2,17 +2,21 @@
   <main class="body">
     <Breadcrumbs />
     <FunnelPart />
+    <About />
   </main>
 </template>
 
 <script>
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.vue'
 import FunnelPart from '@/components/funnelPart/FunnelPart.vue'
+import About from '@/components/about/About.vue'
+
 export default {
   name: 'Body',
   components: {
     Breadcrumbs,
     FunnelPart,
+    About,
 
   }
 }

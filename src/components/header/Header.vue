@@ -31,6 +31,6 @@ export default {
   top: 0;
   z-index: 10;
   background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
 }
 </style>

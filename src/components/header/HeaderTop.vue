@@ -112,7 +112,7 @@ export default {
 <style scoped>
 .header-top {
   background-color: var(--bg-color-secondary);
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 .container {

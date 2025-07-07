@@ -23,27 +23,20 @@
 <script>
 export default {
   name: 'Breadcrumbs',
+  data() {
+    return {
+      // моковые 
+      mockCrumbs: [
+        { path: '/', title: 'Home' },
+        { path: '/diamonds', title: 'Diamonds' },
+        { path: '/diamonds/search', title: 'Diamond Search' }
+      ]
+    }
+  },
   computed: {
     crumbs() {
-      const crumbs = []
-      const matched = this.$route.matched.filter(route => route.meta?.breadcrumb)
-      
-      matched.forEach((route, index) => {
-        const crumb = {
-          path: route.path,
-          title: route.meta.breadcrumb || route.name
-        }
-        
-        // Для динамических маршрутов (например, /diamonds/:id)
-        if (route.meta.dynamicBreadcrumb) {
-          const params = this.$route.params
-          crumb.title = route.meta.dynamicBreadcrumb(params)
-        }
-        
-        crumbs.push(crumb)
-      })
-      
-      return crumbs
+      // моковые 
+      return this.mockCrumbs;
     }
   }
 }
@@ -51,8 +44,7 @@ export default {
 
 <style scoped>
 .breadcrumbs {
-  padding: 12px 0;
-  background-color: #f8f8f8;
+  padding: 10px 0px;
   font-size: 14px;
 }
 
@@ -67,20 +59,21 @@ export default {
 .breadcrumbs-item {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .breadcrumbs-link {
-  color: #666;
+  color: #151542;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .breadcrumbs-link:hover {
-  color: #151542;
+  color: #666;
 }
 
 .breadcrumbs-current {
-  color: #151542;
+  color:#666;
   font-weight: 500;
 }
 
@@ -89,3 +82,32 @@ export default {
   color: #999;
 }
 </style>
+
+<!-- <script>
+export default {
+  name: 'Breadcrumbs',
+  computed: {
+    crumbs() {
+      const crumbs = []
+      const matched = this.$route.matched.filter(route => route.meta?.breadcrumb)
+      
+      matched.forEach((route, index) => {
+        const crumb = {
+          path: route.path,
+          title: route.meta.breadcrumb || route.name
+        }
+        
+        // /diamonds/:id
+        if (route.meta.dynamicBreadcrumb) {
+          const params = this.$route.params
+          crumb.title = route.meta.dynamicBreadcrumb(params)
+        }
+        
+        crumbs.push(crumb)
+      })
+      
+      return crumbs
+    }
+  }
+}
+</script> -->

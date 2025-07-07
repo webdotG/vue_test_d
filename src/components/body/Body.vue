@@ -1,29 +1,26 @@
 <template>
   <main class="body">
     <Breadcrumbs />
-    
-
-    <div class="container">
-        <!-- контент текущего маршрута -->
-      <router-view></router-view> 
-    </div>
+    <FunnelPart />
   </main>
 </template>
 
 <script>
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.vue'
-
+import FunnelPart from '@/components/funnelPart/FunnelPart.vue'
 export default {
   name: 'Body',
   components: {
-    Breadcrumbs
+    Breadcrumbs,
+    FunnelPart,
+
   }
 }
 </script>
 
 <style scoped>
 .body {
-  padding: 20px 0;
+  padding: 0px 15px;
   min-height: calc(100vh - 160px); 
 }
 

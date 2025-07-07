@@ -3,34 +3,42 @@
     <Breadcrumbs />
     <FunnelPart />
     <About />
+    <DiamondMain />
   </main>
 </template>
 
 <script>
-import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.vue'
-import FunnelPart from '@/components/funnelPart/FunnelPart.vue'
-import About from '@/components/about/About.vue'
+import { markRaw } from 'vue';
+
+// Статический импорт (рекомендуемый способ)
+import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.vue';
+import FunnelPart from '@/components/funnelPart/FunnelPart.vue';
+import About from '@/components/about/About.vue';
+import DiamondMain from '@/components/diamonds/DiamondMain.vue';
 
 export default {
   name: 'Body',
   components: {
-    Breadcrumbs,
-    FunnelPart,
-    About,
-
+    Breadcrumbs: markRaw(Breadcrumbs),
+    FunnelPart: markRaw(FunnelPart),
+    About: markRaw(About),
+    DiamondMain: markRaw(DiamondMain)
   }
 }
 </script>
 
 <style scoped>
 .body {
-  padding: 0px 15px;
-  min-height: calc(100vh - 160px); 
+  padding: 0 15px;
+  min-height: calc(100vh - 160px);
+  background-color: #fff;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+/* Временные стили для отладки */
+.body > * {
+  border: 1px solid red;
+  padding: 10px;
+  margin: 10px 0;
+  min-height: 50px;
 }
 </style>

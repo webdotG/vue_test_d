@@ -10,7 +10,6 @@
 <script>
 import { markRaw } from 'vue';
 
-// Статический импорт (рекомендуемый способ)
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs.vue';
 import FunnelPart from '@/components/funnelPart/FunnelPart.vue';
 import About from '@/components/about/About.vue';

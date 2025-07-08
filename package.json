@@ -11,6 +11,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21",
     "pinia": "^3.0.3",
     "vue": "^3.5.17"
   },

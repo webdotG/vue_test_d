@@ -1,82 +1,73 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import { fetchDiamonds } from '@/api/diamonds'; 
+import { debounce } from 'lodash-es';
+import { fetchDiamonds } from '@/api/diamonds';
 
 export const useFilterStore = defineStore('filters', () => {
-  // Состояние
-  const diamondType = ref('natural');
-  const filters = ref({
-    color: '',
-    clarity: '',
-    shape: '',
-    priceMin: null,
-    priceMax: null,
-    advanced: {
-      table: '',
-      depth: '',
-      polish: '',
-      symmetry: '',
-      fluorescence: ''
-    }
-  });
-
+  // Основные состояния
+  const diamondType = ref('natural'); // 'natural' | 'lab'
   const loading = ref(false);
   const diamonds = ref([]);
   const searchHistory = ref([]);
 
+  // Фильтры
+  const filters = ref({
+    shape: '',
+    caratMin: null,
+    caratMax: null,
+    clarity: '',
+    priceMin: null,
+    priceMax: null,
+    color: '',
+    cut: ''
+  });
+
   // Геттеры
   const allFilters = computed(() => {
-    const advancedFilters = Object.fromEntries(
-      Object.entries(filters.value.advanced)
-        .filter(([_, value]) => value !== '')
-    );
+    const activeFilters = {};
     
+    // Основные фильтры
+    for (const [key, value] of Object.entries(filters.value)) {
+      if (value !== '' && value !== null) {
+        activeFilters[key] = value;
+      }
+    }
+
     return {
       type: diamondType.value,
-      ...filters.value,
-      ...advancedFilters
+      ...activeFilters
     };
   });
 
   const hasActiveFilters = computed(() => {
-    const mainFilters = Object.values(filters.value).some(val => 
+    return Object.values(filters.value).some(val => 
       val !== '' && val !== null
     );
-    const advFilters = Object.values(filters.value.advanced).some(val => val !== '');
-    return mainFilters || advFilters;
   });
 
   // Действия
-  function setDiamondType(type) {
+  const setDiamondType = (type) => {
     diamondType.value = type;
-  }
+  };
 
-  function updateFilter(key, value) {
-    if (key in filters.value) {
-      filters.value[key] = value;
-    } else if (key in filters.value.advanced) {
-      filters.value.advanced[key] = value;
-    }
-  }
+  const updateFilter = (key, value) => {
+    filters.value[key] = value;
+  };
 
-  function resetFilters() {
+  const resetFilters = () => {
     filters.value = {
-      color: '',
-      clarity: '',
       shape: '',
+      caratMin: null,
+      caratMax: null,
+      clarity: '',
       priceMin: null,
       priceMax: null,
-      advanced: {
-        table: '',
-        depth: '',
-        polish: '',
-        symmetry: '',
-        fluorescence: ''
-      }
+      color: '',
+      cut: ''
     };
-  }
+  };
 
-  function addToHistory(searchParams) {
+  const addToHistory = (searchParams) => {
     searchHistory.value.unshift({
       ...searchParams,
       date: new Date().toISOString()
@@ -84,9 +75,10 @@ export const useFilterStore = defineStore('filters', () => {
     if (searchHistory.value.length > 5) {
       searchHistory.value.pop();
     }
-  }
+  };
 
-  async function performSearch() {
+  // Поиск с debounce
+  const performSearch = debounce(async () => {
     const currentFilters = allFilters.value;
     try {
       loading.value = true;
@@ -98,19 +90,30 @@ export const useFilterStore = defineStore('filters', () => {
     } finally {
       loading.value = false;
     }
-  }
+  }, 300);
+
+  // сброс debounce 
+  const cancelSearch = () => {
+    performSearch.cancel();
+  };
 
   return {
+    // Состояния
     diamondType,
     filters,
     diamonds,
     loading,
     searchHistory,
+    
+    // Геттеры
     allFilters,
     hasActiveFilters,
+    
+    // Действия
     setDiamondType,
     updateFilter,
     resetFilters,
-    performSearch
+    performSearch,
+    cancelSearch
   };
 });

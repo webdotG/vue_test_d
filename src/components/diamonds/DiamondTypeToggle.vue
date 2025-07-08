@@ -11,42 +11,27 @@ const toggleType = (type) => {
 </script>
 
 <template>
-  <div class="toggle">
-    <button
-      :class="{ active: diamondType === 'natural' }"
-      @click="toggleType('natural')"
-    >
-      Natural
-    </button>
-    <button
-      :class="{ active: diamondType === 'lab' }"
-      @click="toggleType('lab')"
-    >
-      Lab-Grown
-    </button>
+  <div class="diamond-type-toggle">
+    <div class="toggle-header">
+      <h3>Diamond Type</h3>
+      <span class="current-type">{{ diamondType === 'natural' ? 'Natural Diamonds' : 'Lab-Grown Diamonds' }}</span>
+    </div>
+    <div class="toggle-buttons">
+      <button
+        :class="{ active: diamondType === 'natural' }"
+        @click="toggleType('natural')"
+      >
+        Natural
+      </button>
+      <button
+        :class="{ active: diamondType === 'lab' }"
+        @click="toggleType('lab')"
+      >
+        Lab-Grown
+      </button>
+    </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'DiamondTypeToggle',
-  props: {
-    modelValue: {
-      type: String,
-      required: true,
-      validator: value => ['natural', 'lab'].includes(value)
-    }
-  },
-  emits: ['update:modelValue'],
-  computed: {
-    currentTypeLabel() {
-      return this.modelValue === 'natural' 
-        ? 'Natural Diamonds' 
-        : 'Lab-Grown Diamonds';
-    }
-  }
-}
-</script>
 
 <style scoped>
 .diamond-type-toggle {

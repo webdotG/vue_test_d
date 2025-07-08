@@ -1,51 +1,24 @@
 <template>
   <div class="filter">
     <label>Clarity</label>
-    <select v-model="selectedClarity" class="filter-select">
-      <option value="">All Clarity Grades</option>
-      <option 
-        v-for="clarity in clarityOptions" 
-        :value="clarity"
-        :key="clarity"
-      >
-        {{ clarity }}
-      </option>
+    <select
+      :value="filterStore.filters.clarity"
+      @change="filterStore.updateFilter('clarity', $event.target.value)"
+    >
+      <option value="">All Clarity</option>
+      <option value="FL">FL</option>
+      <option value="IF">IF</option>
+      <option value="VVS1">VVS1</option>
+      <option value="VVS2">VVS2</option>
+      <option value="VS1">VS1</option>
+      <option value="VS2">VS2</option>
     </select>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FilterClarity',
-  props: {
-    modelValue: {
-      type: String,
-      default: ''
-    },
-    diamondType: {
-      type: String,
-      required: true,
-      validator: value => ['natural', 'lab'].includes(value)
-    }
-  },
-  emits: ['update:modelValue'],
-  computed: {
-    clarityOptions() {
-      if (this.diamondType === 'natural') {
-        return ['FL', 'IF', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2', 'I1', 'I2', 'I3']
-      }
-      return ['FL', 'IF', 'VVS', 'VS', 'SI', 'I']
-    },
-    selectedClarity: {
-      get() {
-        return this.modelValue
-      },
-      set(value) {
-        this.$emit('update:modelValue', value)
-      }
-    }
-  }
-}
+<script setup>
+import { useFilterStore } from '@/stores/filterStore';
+const filterStore = useFilterStore();
 </script>
 
 <style scoped>

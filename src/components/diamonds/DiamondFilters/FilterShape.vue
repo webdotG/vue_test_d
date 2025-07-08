@@ -1,67 +1,23 @@
 <template>
   <div class="filter">
     <label>Shape</label>
-    <div class="shape-grid">
-      <button
-        v-for="shape in shapeOptions"
-        :key="shape.value"
-        @click="selectShape(shape.value)"
-        :class="{ active: selectedShape === shape.value }"
-        class="shape-button"
-      >
-        <span class="shape-icon">{{ shape.icon }}</span>
-        <span class="shape-label">{{ shape.label }}</span>
-      </button>
-    </div>
+    <select 
+      :value="filterStore.filters.shape" 
+      @change="filterStore.updateFilter('shape', $event.target.value)"
+    >
+      <option value="">All Shapes</option>
+      <option value="round">Round</option>
+      <option value="princess">Princess</option>
+      <option value="emerald">Emerald</option>
+      <option value="oval">Oval</option>
+      <option value="cushion">Cushion</option>
+    </select>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FilterShape',
-  props: {
-    modelValue: {
-      type: String,
-      default: ''
-    },
-    diamondType: {
-      type: String,
-      required: true
-    }
-  },
-  emits: ['update:modelValue'],
-  data() {
-    return {
-      shapeOptions: [
-        { value: 'round', label: 'Round', icon: '○' },
-        { value: 'princess', label: 'Princess', icon: '□' },
-        { value: 'cushion', label: 'Cushion', icon: '▣' },
-        { value: 'emerald', label: 'Emerald', icon: '▭' },
-        { value: 'oval', label: 'Oval', icon: '⬭' },
-        { value: 'pear', label: 'Pear', icon: '🍐' },
-        { value: 'marquise', label: 'Marquise', icon: '⌐' },
-        { value: 'asscher', label: 'Asscher', icon: '⬥' },
-        { value: 'radiant', label: 'Radiant', icon: '▰' },
-        { value: 'heart', label: 'Heart', icon: '❤' }
-      ]
-    }
-  },
-  computed: {
-    selectedShape: {
-      get() {
-        return this.modelValue
-      },
-      set(value) {
-        this.$emit('update:modelValue', value)
-      }
-    }
-  },
-  methods: {
-    selectShape(shape) {
-      this.selectedShape = this.selectedShape === shape ? '' : shape
-    }
-  }
-}
+<script setup>
+import { useFilterStore } from '@/stores/filterStore';
+const filterStore = useFilterStore();
 </script>
 
 <style scoped>

@@ -1,74 +1,44 @@
 <template>
   <div class="diamond-container">
-    <DiamondTypeToggle v-model="diamondType" />
+    <DiamondTypeToggle v-model="filterStore.diamondType" />
     
     <DiamondFilters 
-      v-model="filters"
-      :diamond-type="diamondType"
-      @reset="resetFilters"
+      :filters="filterStore.filters"
+      :diamond-type="filterStore.diamondType"
+      @update-filter="filterStore.updateFilter"
+      @reset="filterStore.resetFilters"
     />
     
+    <div class="search-controls">
+      <button 
+        @click="filterStore.performSearch"
+        :disabled="filterStore.loading"
+        class="search-button"
+      >
+        {{ filterStore.loading ? 'Searching...' : 'Search Diamonds' }}
+      </button>
+      <span v-if="filterStore.hasActiveFilters" class="active-filters-count">
+        Active filters: {{ Object.keys(filterStore.allFilters).length - 1 }}
+      </span>
+    </div>
+    
     <DiamondList 
-      :diamonds="filteredDiamonds"
-      :loading="loading"
+      :diamonds="filterStore.diamonds"
+      :loading="filterStore.loading"
     />
   </div>
 </template>
 
-<script>
-import { ref, computed, watch } from 'vue';
+<script setup>
+import { useFilterStore } from '@/stores/filterStore';
 import DiamondTypeToggle from './DiamondTypeToggle.vue';
 import DiamondFilters from './DiamondFilters/DiamondFilters.vue';
 import DiamondList from './DiamondList.vue';
 
-export default {
-  name: 'DiamondMain',
-  components: {
-    DiamondTypeToggle,
-    DiamondFilters,
-    DiamondList
-  },
-  
-  setup() {
-    const diamondType = ref('natural');
-    const filters = ref(createDefaultFilters());
-    const loading = ref(false);
-    const filteredDiamonds = ref([]);
+const filterStore = useFilterStore();
 
-    function createDefaultFilters() {
-      return {
-        color: '',
-        clarity: '',
-        shape: '',
-        priceMin: '',
-        priceMax: '',
-        advanced: {}
-      };
-    }
-
-    const resetFilters = () => {
-      filters.value = createDefaultFilters();
-    };
-
-    watch([filters, diamondType], async () => {
-      loading.value = true;
-      try {
-        //  API 
-        // filteredDiamonds.value = await api.fetchDiamonds(filters.value);
-      } finally {
-        loading.value = false;
-      }
-    }, { deep: true });
-
-    return {
-      diamondType,
-      filters,
-      loading,
-      filteredDiamonds,
-      resetFilters
-    };
-  }
-};
+// Первоначальная загрузка данных
+filterStore.performSearch();
 </script>
 
 <style scoped>
@@ -76,5 +46,36 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.search-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.search-button {
+  padding: 8px 16px;
+  background-color: #151542;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover:not(:disabled) {
+  background-color: #2a2a6e;
+}
+
+.search-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.active-filters-count {
+  font-size: 14px;
+  color: #666;
 }
 </style>

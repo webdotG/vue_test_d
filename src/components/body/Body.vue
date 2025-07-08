@@ -33,11 +33,4 @@ export default {
   background-color: #fff;
 }
 
-/* Временные стили для отладки */
-.body > * {
-  border: 1px solid red;
-  padding: 10px;
-  margin: 10px 0;
-  min-height: 50px;
-}
 </style>

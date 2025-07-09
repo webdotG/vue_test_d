@@ -1,0 +1,69 @@
+[
+  {
+    "id": "diamond-1",
+    "code": "DK0001",
+    "ct": 1.25,
+    "isPromo": false,
+    "shape": {
+      "name": "Круглая (Кр-57)",
+      "slug": "round"
+    },
+    "color": {
+      "name": "D"
+    },
+    "purity": {
+      "name": "FL"
+    },
+    "price": {
+      "usd": 12500,
+      "rub": 1125000,
+      "discount": 0
+    },
+    "cut": "Идеальная",
+    "polish": "EX",
+    "symmetry": "EX",
+    "fluorescence": "None",
+    "table": 58.5,
+    "depth": 62.3,
+    "lwRatio": null,
+    "certificate": "GIA",
+    "thumb": "https://example.com/diamonds/diamond-1.jpg",
+    "count360": 1,
+    "artificial": false,
+    "createdAt": "2023-01-15T10:30:00Z"
+  },
+  {
+    "id": "diamond-2",
+    "code": "DK0002",
+    "ct": 2.15,
+    "isPromo": true,
+    "shape": {
+      "name": "Принцесса (Пр-55)",
+      "slug": "princess"
+    },
+    "color": {
+      "name": "G"
+    },
+    "purity": {
+      "name": "VS1"
+    },
+    "price": {
+      "usd": 18500,
+      "rub": 1665000,
+      "discount": 10
+    },
+    "cut": "Очень хорошая",
+    "polish": "VG",
+    "symmetry": "VG",
+    "fluorescence": "Faint",
+    "table": 62.1,
+    "depth": 65.7,
+    "lwRatio": 1.05,
+    "certificate": "IGI",
+    "thumb": "https://example.com/diamonds/diamond-2.jpg",
+    "count360": 0,
+    "artificial": false,
+    "createdAt": "2023-02-20T14:45:00Z"
+  }
+
+]

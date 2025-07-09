@@ -1,23 +1,23 @@
 <template>
   <div class="diamond-card" @click="$emit('click')">
     <div class="image-container">
-      <img :src="diamond.image" :alt="diamond.title" class="diamond-image">
+      <img :src="diamond.thumb" :alt="diamond.code" class="diamond-image">
     </div>
     
     <div class="details">
-      <h3 class="title">{{ diamond.title }}</h3>
+      <h3 class="title">{{ diamond.code }}</h3>
       <div class="specs">
         <div class="spec">
           <span class="label">Carat:</span>
-          <span class="value">{{ diamond.carat }}</span>
+          <span class="value">{{ diamond.ct }}</span>
         </div>
         <div class="spec">
           <span class="label">Color:</span>
-          <span class="value">{{ diamond.color }}</span>
+          <span class="value">{{ diamond.color.name }}</span>
         </div>
         <div class="spec">
           <span class="label">Price:</span>
-          <span class="value price">{{ formatPrice(diamond.price) }}</span>
+          <span class="value price">{{ formatPrice(diamond.price.usd) }}</span>
         </div>
       </div>
     </div>
@@ -31,7 +31,14 @@ export default {
     diamond: {
       type: Object,
       required: true,
-      validator: (d) => ['id', 'title', 'carat', 'price'].every(k => k in d)
+      validator: (d) => [
+        'id', 
+        'code', 
+        'ct', 
+        'price', 
+        'thumb',
+        'color'
+      ].every(k => k in d)
     }
   },
   emits: ['click'],

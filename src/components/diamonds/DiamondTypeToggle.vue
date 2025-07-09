@@ -1,12 +1,10 @@
 <script setup>
-import { storeToRefs } from 'pinia';
 import { useFilterStore } from '@/stores/filterStore';
 
 const filterStore = useFilterStore();
-const { diamondType } = storeToRefs(filterStore);
 
 const toggleType = (type) => {
-  filterStore.setDiamondType(type);
+  filterStore.diamondType = type; 
 };
 </script>
 
@@ -18,13 +16,13 @@ const toggleType = (type) => {
     </div>
     <div class="toggle-buttons">
       <button
-        :class="{ active: diamondType === 'natural' }"
+        :class="{ active: filterStore.diamondType === 'natural' }"
         @click="toggleType('natural')"
       >
         Natural
       </button>
       <button
-        :class="{ active: diamondType === 'lab' }"
+        :class="{ active: filterStore.diamondType === 'lab' }"
         @click="toggleType('lab')"
       >
         Lab-Grown

@@ -9,17 +9,8 @@
       @reset="filterStore.resetFilters"
     />
     
-    <div class="search-controls">
-      <button 
-        @click="filterStore.performSearch"
-        :disabled="filterStore.loading"
-        class="search-button"
-      >
-        {{ filterStore.loading ? 'Searching...' : 'Search Diamonds' }}
-      </button>
-      <span v-if="filterStore.hasActiveFilters" class="active-filters-count">
-        Active filters: {{ Object.keys(filterStore.allFilters).length - 1 }}
-      </span>
+    <div v-if="filterStore.hasFilters" class="active-filters-count">
+      Active filters: {{ Object.keys(filterStore.activeFilters).length }}
     </div>
     
     <DiamondList 
@@ -29,16 +20,13 @@
   </div>
 </template>
 
-<script setup>
-import { useFilterStore } from '@/stores/filterStore';
-import DiamondTypeToggle from './DiamondTypeToggle.vue';
-import DiamondFilters from './DiamondFilters/DiamondFilters.vue';
-import DiamondList from './DiamondList.vue';
+<script setup lang="ts">
+import { useFilterStore } from '../../stores/filterStore'
+import DiamondTypeToggle from './DiamondTypeToggle.vue'
+import DiamondFilters from './DiamondFilters/DiamondFilters.vue'
+import DiamondList from './DiamondList.vue'
 
-const filterStore = useFilterStore();
-
-// Первоначальная загрузка данных
-filterStore.performSearch();
+const filterStore = useFilterStore()
 </script>
 
 <style scoped>
@@ -48,34 +36,9 @@ filterStore.performSearch();
   padding: 20px;
 }
 
-.search-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.search-button {
-  padding: 8px 16px;
-  background-color: #151542;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.search-button:hover:not(:disabled) {
-  background-color: #2a2a6e;
-}
-
-.search-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
 .active-filters-count {
   font-size: 14px;
   color: #666;
+  margin: 20px 0;
 }
 </style>

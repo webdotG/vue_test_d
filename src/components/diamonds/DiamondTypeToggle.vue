@@ -10,10 +10,7 @@ const toggleType = (type) => {
 
 <template>
   <div class="diamond-type-toggle">
-    <div class="toggle-header">
-      <h3>Diamond Type</h3>
-      <span class="current-type">{{ diamondType === 'natural' ? 'Natural Diamonds' : 'Lab-Grown Diamonds' }}</span>
-    </div>
+
     <div class="toggle-buttons">
       <button
         :class="{ active: filterStore.diamondType === 'natural' }"

@@ -22,8 +22,8 @@ export const fetchDiamonds = async (filters: DiamondFilters = {}): Promise<{
   await new Promise(resolve => setTimeout(resolve, 300));
   
   // Загрузка фиксированных данных из JSON
-  //  const response = await fetch('/vue_test_d/api/diamonds.json');
-  const response = await fetch('/api/diamonds.json');
+   const response = await fetch('/vue_test_d/api/diamonds.json');
+  
   const allDiamonds: Diamond[] = await response.json();
   
   // Фильтрация данных

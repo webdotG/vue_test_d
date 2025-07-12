@@ -21,35 +21,50 @@ const filterStore = useFilterStore();
 </script>
 
 <style scoped>
-.shape-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-}
-.shape-button {
+/* мобилка */
+.filter {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 8px;
+  gap: 8px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 10px 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background: white;
+  background-color: white;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s;
 }
-.shape-button:hover {
+
+select:hover {
   border-color: #151542;
 }
-.shape-button.active {
-  background: #151542;
-  color: white;
-  border-color: #151542;
+
+/* планшет */
+@media (min-width: 640px) {
+  label {
+    font-size: 15px;
+  }
+  select {
+    font-size: 15px;
+  }
 }
-.shape-icon {
-  font-size: 20px;
-  margin-bottom: 4px;
-}
-.shape-label {
-  font-size: 12px;
+
+/* десктоп */
+@media (min-width: 1100px) {
+  label {
+    font-size: 16px;
+  }
+  select {
+    font-size: 16px;
+  }
 }
 </style>

@@ -1,11 +1,87 @@
 <template>
   <div class="header-bottom">
-     <svg viewBox="0 0 168 30"  xmlns="http://www.w3.org/2000/svg">
+     <svg class="header-logo-svg" viewBox="0 0 168 30"  xmlns="http://www.w3.org/2000/svg">
         <path d="M59.7857 27.0107V8.8538H51.3257V9.31688L55.2625 11.5839V23.7622C54.701 24.5105 53.9693 25.1191 53.1259 25.5392C52.2825 25.9592 51.3508 26.1791 50.4056 26.1813C48.0597 26.1813 46.4688 24.8197 46.4688 21.4399V8.8538H38.0087V9.31688L41.9455 11.5839V22.6425C41.9455 27.6293 44.755 29.8997 48.4776 29.8997C51.287 29.8997 53.7453 27.8815 55.4732 24.8715V29.6647H62.8445V29.1947L59.7857 27.0107ZM134.444 28.977L138.177 26.6893V3.36251L134.114 1.07476V0.597856H142.7V26.6893L146.427 28.9736V29.4505H122.462V28.9736L126.191 26.6893V11.4215L122.128 9.34799V8.90219H130.715V26.6962L134.444 28.977ZM128.267 5.71247C129.019 5.68671 129.732 5.37451 130.255 4.84167C130.778 4.30884 131.07 3.59701 131.07 2.85623C131.07 2.11546 130.778 1.40363 130.255 0.870791C129.732 0.337958 129.019 0.0257553 128.267 0C127.514 0.0257553 126.802 0.337958 126.279 0.870791C125.756 1.40363 125.463 2.11546 125.463 2.85623C125.463 3.59701 125.756 4.30884 126.279 4.84167C126.802 5.37451 127.514 5.68671 128.267 5.71247ZM164.864 22.3004C162.465 25.0961 160.73 25.8115 158.191 25.8115C152.744 25.8115 150.525 21.8961 150.525 17.8977V17.362H165.187C164.976 12.6206 162.297 8.5808 156.892 8.5808C150.149 8.5808 146.504 14.0237 146.504 19.6394C146.504 25.9843 151.153 29.8997 156.432 29.8997C161.833 29.8997 164.551 25.2758 165.285 22.6702C165.152 22.5388 164.878 22.3246 164.878 22.3246L164.864 22.3004ZM150.866 16.0143C151.494 12.6759 153.629 9.74886 156.772 9.74886C159.326 9.74886 160.456 12.3476 160.456 14.9844C160.464 15.3305 160.45 15.6768 160.414 16.0212L150.866 16.0143ZM117.011 23.5998L97.5205 0.597856H90.9112L90.7321 0.884689L94.7883 5.46365V26.3437L90.5144 28.9736V29.4505H101.113V28.9736L96.2527 26.3437V7.15354L115.494 29.4505H118.469V3.70464L122.739 1.07476V0.597856H112.14V1.07476L116.997 3.70464L117.011 23.5998ZM81.9174 22.3315C79.5188 25.1272 77.7839 25.8426 75.2273 25.8426C69.784 25.8426 67.5645 21.9272 67.5645 17.9288V17.3931H82.2229C82.0157 12.6517 79.3327 8.6119 73.9314 8.6119C67.1887 8.6119 63.5434 14.0548 63.5434 19.6705C63.5434 26.0154 68.1931 29.9308 73.4714 29.9308C78.8691 29.9308 81.5908 25.307 82.3248 22.7013C82.1878 22.5699 81.9174 22.3557 81.9174 22.3557V22.3315ZM67.733 16.0557C68.3581 12.7174 70.4969 9.79033 73.6365 9.79033C76.1931 9.79033 77.3239 12.3891 77.3239 15.0259C77.332 15.372 77.3179 15.7183 77.2817 16.0626L67.733 16.0557ZM20.7656 21.9514C20.7656 18.4472 17.9175 14.9015 13.0606 14.9015H9.1589V28.0923H14.3986C18.7989 28.0923 20.7656 25.2897 20.7656 21.9514ZM9.17646 13.5814H13.791C17.3907 13.5814 19.108 10.4504 19.108 7.93456C19.108 4.76212 17.0992 1.91798 13.4118 1.91798H9.1589L9.17646 13.5814ZM26.3564 21.5781C26.3564 25.3795 22.8797 29.4505 16.5233 29.4505H0.0175592V28.9736L4.06672 26.6893V3.36251L0 1.07476V0.597856H16.2002C21.8964 0.597856 24.7059 3.85669 24.7059 6.98766C24.7059 9.91474 22.3178 12.9248 17.7524 13.8993C22.9886 14.6388 26.3389 17.8562 26.3389 21.5643L26.3564 21.5781ZM27.2168 29.4367H39.1887V28.9598L35.4591 26.6755V0.597856H26.8972V1.07476L30.9605 3.36251V26.6893L27.2344 28.9736L27.2168 29.4367ZM166.549 30C166.356 30.0012 166.165 29.9624 165.988 29.8859C165.816 29.815 165.659 29.7117 165.527 29.5818C165.395 29.4517 165.289 29.2981 165.215 29.1291C165.103 28.8676 165.073 28.5792 165.128 28.3007C165.184 28.0223 165.322 27.7665 165.526 27.5659C165.73 27.3652 165.99 27.2289 166.273 27.1741C166.556 27.1196 166.849 27.1493 167.115 27.2595C167.287 27.3324 167.443 27.4368 167.575 27.5671C167.707 27.6966 167.812 27.8504 167.884 28.0198C167.961 28.195 168 28.3837 168 28.5744C168 28.7652 167.961 28.9539 167.884 29.1291C167.738 29.4706 167.462 29.7422 167.115 29.8859C166.937 29.9627 166.744 30.0016 166.549 30ZM165.352 28.5727C165.351 28.7306 165.383 28.8872 165.447 29.0323C165.509 29.1706 165.596 29.297 165.703 29.4056C165.813 29.513 165.943 29.5991 166.086 29.6578C166.232 29.7205 166.39 29.7522 166.549 29.7511C166.71 29.7518 166.869 29.72 167.017 29.6578C167.158 29.5988 167.287 29.5131 167.396 29.4056C167.504 29.2981 167.591 29.1716 167.652 29.0323C167.716 28.8872 167.748 28.7306 167.747 28.5727C167.748 28.4158 167.716 28.2604 167.652 28.1165C167.592 27.9759 167.505 27.848 167.396 27.7398C167.286 27.6334 167.158 27.5479 167.017 27.4876C166.869 27.4252 166.71 27.3935 166.549 27.3943C166.39 27.3932 166.232 27.4249 166.086 27.4876C165.797 27.6061 165.567 27.8321 165.447 28.1165C165.383 28.2604 165.351 28.4158 165.352 28.5727ZM167.073 28.2479C167.072 28.2893 167.065 28.3298 167.052 28.3688C167.025 28.4502 166.975 28.5222 166.908 28.5762C166.874 28.6017 166.836 28.6215 166.795 28.6349L167.266 29.2984H166.946L166.486 28.6522H166.335V29.2984H166.058V27.8608H166.627C166.683 27.8587 166.739 27.867 166.792 27.885C166.836 27.8981 166.878 27.9192 166.915 27.9472C166.962 27.9823 167.001 28.0275 167.029 28.0796C167.056 28.1317 167.071 28.1892 167.073 28.2479ZM166.335 28.3999H166.609C166.641 28.4068 166.675 28.4068 166.707 28.3999C166.727 28.3937 166.745 28.3831 166.76 28.3688C166.772 28.3546 166.78 28.3381 166.785 28.3204C166.788 28.3021 166.788 28.2834 166.785 28.2651C166.784 28.2289 166.772 28.1937 166.75 28.1649C166.734 28.1495 166.716 28.1367 166.697 28.1269C166.665 28.1203 166.631 28.1203 166.599 28.1269H166.325L166.335 28.3999Z" 
         fill="#151542"/>
     </svg>
     
-    <ul class="nav">
+    
+    <button class="burger-btn" @click="toggleMenu">
+      <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    
+    <div 
+      class="mobile-nav-wrapper" 
+      :class="{ 'is-open': isMenuOpen }"
+      @click.self="closeMenu"
+    >
+      <div class="mobile-nav" ref="mobileNav">
+        <button class="close-btn" @click="closeMenu">&times;</button>
+        <ul class="nav">
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 0 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(0)">Diamonds</a>
+            <ul class="submenu">
+              <li><a>Round Diamonds</a></li>
+              <li><a>Princess Diamonds</a></li>
+            </ul>
+          </li>
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 1 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(1)">Engagement Rings</a>
+            <ul class="submenu">
+              <li><a>Solitaire Rings</a></li>
+              <li><a>Halo Rings</a></li>
+            </ul>
+          </li>
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 2 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(2)">Wedding Rings</a>
+            <ul class="submenu">
+              <li><a>Classic Bands</a></li>
+              <li><a>Diamond Bands</a></li>
+              <li><a>Eternity Rings</a></li>
+            </ul>
+          </li>
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 3 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(3)">Jewelry</a>
+            <ul class="submenu">
+              <li><a>Necklaces</a></li>
+              <li><a>Earrings</a></li>
+              <li><a>Bracelets</a></li>
+            </ul>
+          </li>
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 4 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(4)">Gifts</a>
+            <ul class="submenu">
+              <li><a>Anniversary Gifts</a></li>
+              <li><a>Birthday Gifts</a></li>
+            </ul>
+          </li>
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 5 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(5)">Gemstones</a>
+            <ul class="submenu">
+              <li><a>Sapphires</a></li>
+              <li><a>Rubies</a></li>
+              <li><a>Emeralds</a></li>
+            </ul>
+          </li>
+          <li class="nav_item" :class="{ 'submenu-is-open': activeSubmenu === 6 }">
+            <a class="nav_link" @click.prevent="toggleSubmenu(6)">Education</a>
+            <ul class="submenu">
+              <li><a>Diamond Guide</a></li>
+              <li><a>Ring Sizing</a></li>
+              <li><a>Care Guide</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <ul class="nav desktop-nav">
       <li class="nav_item">
         <a class="nav_link">Diamonds</a>
         <ul class="submenu">
@@ -39,7 +115,7 @@
         <a class="nav_link">Jewelry</a>
         <ul class="submenu">
           <li><a>Necklaces</a></li>
-          <li><a>Earrings</a></li>
+          <li><a>Earrings</a></li> 
           <li><a>Bracelets</a></li>
         </ul>
       </li>
@@ -75,21 +151,54 @@
 
 <script>
 export default {
-  name: 'HeaderBottom'
+  name: 'HeaderBottom',
+  data() {
+    return {
+      isMenuOpen: false,
+      activeSubmenu: null 
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      this.activeSubmenu = null; 
+    },
+    closeMenu() {
+      this.isMenuOpen = false;
+      this.activeSubmenu = null; 
+    },
+    toggleSubmenu(index) {
+      if (this.activeSubmenu === index) {
+        this.activeSubmenu = null; 
+      } else {
+        this.activeSubmenu = index; 
+      }
+    }
+  },
+  watch: {
+    isMenuOpen(isOpen) {
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
+/* мобилка */
 .header-bottom {
   background: #fff;
-  align-items: center;
   display: flex;
-  height: 68px;
-  justify-content: flex-start;
-  max-width: 1920px;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
   width: 100%;
   position: relative;
   padding: 5px 15px;
+  box-sizing: border-box;
 }
 
 .header-bottom::after {
@@ -102,110 +211,314 @@ export default {
   left: 0px;
 }
 
-.header-bottom svg {
-  margin-right: 20px;
+.logo {
   fill: none;
   height: auto;
-  width: 134px;
+  width: 120px;
+  z-index: 1001; 
 }
 
-.nav {
-  align-items: center;
-  box-sizing: border-box;
+
+.logo {
   display: flex;
-  height: 28px;
-  justify-content: flex-start;
-  min-width: 550px;
-  width: 100%;
-  position: relative;
-  gap: 7px;
-}
-
-.nav_item {
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  padding: 0 28px 0 0;
+  z-index: 1001;
 }
 
-.nav_link {
-  padding-top: 7px;
-  padding-bottom: 7px;
+.header-logo-svg {
+  width: 120px;
+  height: auto;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .header-logo-svg {
+    width: 134px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .header-logo-svg {
+    width: 150px;
+  }
+}
+
+.burger-btn {
   display: flex;
   align-items: center;
-  height: 100%;
-  font-size: var(--font-size-sm);
-  line-height: 16px;
-  text-decoration: none;
-  color: #151542;
-  transition: color 0.3s ease;
-  border-bottom: 1px solid transparent;
+  justify-content: center;
+  width: 40px; 
+  height: 40px; 
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0; 
 }
 
-.nav_link:hover {
-  color: var(--color-secondary);
-  border-bottom: 1px solid var(--b-color-secondary);
+.burger-icon {
+  position: relative;
+  width: 24px;
+  height: 18px;
+  display: block;
 }
 
-.submenu {
+.burger-icon span {
   position: absolute;
-  top: 100%;
   left: 0;
-  width: 200px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 10px 0;
-  margin-top: 10px;
+  width: 100%;
+  height: 2px;
+  background-color: #151542;
+  transition: all 0.3s ease;
+}
+
+.burger-icon span:nth-child(1) { top: 0; }
+.burger-icon span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.burger-icon span:nth-child(3) { bottom: 0; }
+
+/* Анимация для открытого состояния */
+.mobile-nav-wrapper.is-open .burger-icon span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-nav-wrapper.is-open .burger-icon span:nth-child(2) {
+  opacity: 0; /* Скрываем среднюю линию */
+}
+
+.mobile-nav-wrapper.is-open .burger-icon span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1000;
 }
 
-.nav_item:hover .submenu {
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  right: -100%; /* Start off-screen */
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  background-color: #fff;
+  padding: 60px 20px 20px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.4s ease;
+  overflow-y: auto;
+}
+
+.mobile-nav-wrapper.is-open {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
-.submenu li {
-  padding: 8px 20px;
+.mobile-nav-wrapper.is-open .mobile-nav {
+  right: 0;
 }
 
-.submenu a {
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav .nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav .nav_item {
+  list-style: none;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.mobile-nav .nav_link {
+  font-size: 1.1rem;
   color: #151542;
   text-decoration: none;
-  display: block;
-  transition: color 0.2s ease;
-  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
-.submenu a:hover {
-  color: var(--color-secondary);
-  background: #f8f8f8;
+.mobile-nav .nav_link:hover {
+  background-color: #f8f8f8;
 }
 
-.nav_item {
-  position: relative;
-  padding-right: 20px;
-}
-
-.nav_item:after {
-  content: "";
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid #151542;
+.mobile-nav .nav_link::after {
+  content: '›';
+  font-size: 1.5rem;
+  color: #ccc;
+  transform: rotate(90deg);
   transition: transform 0.3s ease;
 }
 
-.nav_item:hover:after {
-  transform: translateY(-50%) rotate(180deg);
+.mobile-nav .nav_item.submenu-is-open .nav_link::after {
+    transform: rotate(-90deg);
+}
+
+.mobile-nav .submenu {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 15px;
+  margin-top: 0;
+  transition: max-height 0.4s ease-in-out, margin-top 0.4s ease-in-out;
+}
+
+.mobile-nav .nav_item.submenu-is-open .submenu {
+  max-height: 500px;
+  margin-top: 10px;
+}
+
+.mobile-nav .submenu li {
+  padding: 8px 0;
+  list-style: none;
+}
+
+.mobile-nav .submenu a {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-nav .submenu a:hover {
+  background-color: #f8f8f8;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .header-bottom {
+    padding: 5px 20px;
+  }
+  .logo {
+    width: 134px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .header-bottom {
+    justify-content: flex-start;
+  }
+  .logo {
+    margin-right: 20px;
+  }
+  .burger-btn, .mobile-nav-wrapper {
+    display: none; 
+  }
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    gap: 7px;
+  }
+  .nav_item {
+    position: relative;
+    cursor: pointer;
+    padding: 0 28px 0 0;
+    list-style: none;
+  }
+  .nav_link {
+    padding: 7px 0;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    color: #151542;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+  }
+  .nav_link:hover {
+    color: var(--color-secondary);
+    border-bottom-color: var(--b-color-secondary);
+  }
+  .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+  .nav_item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .submenu li {
+    padding: 0; 
+    list-style: none;
+  }
+  .submenu a {
+    color: #151542;
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+  .submenu a:hover {
+    color: var(--color-secondary);
+    background-color: #f8f8f8;
+  }
+  .nav_item:after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #151542;
+    transition: transform 0.3s ease;
+  }
+  .nav_item:hover:after {
+    transform: translateY(-50%) rotate(180deg);
+  }
 }
 </style>

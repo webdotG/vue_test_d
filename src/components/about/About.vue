@@ -51,7 +51,6 @@ export default {
             this.$nextTick(() => {
                 const element = this.$refs.textParagraph;
                 if (element) {
-                    // Проверяем, нужно ли показывать кнопку
                     this.showToggleButton = element.scrollHeight > element.clientHeight;
                 }
             });
@@ -61,21 +60,17 @@ export default {
 </script>
 
 <style scoped>
+/* мобилка */
 .about-search {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    
 }
 
 .about-search_heading {
-    align-items: center;
     color: var(--color-primary);
-    display: flex;
-    font-size: 24px;
-    font-style: normal;
+    
     font-weight: 600;
-    justify-content: center;
-    line-height: normal;
     margin: 0 0 16px;
     text-align: center;
 }
@@ -89,15 +84,12 @@ export default {
 .about-search_paragraph {
     color: var(--color-primary);
     font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: center;
-    text-transform: none;
     
-    /* Ключевые стили для ограничения текста */
+    text-align: center;
+    
+    
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -111,24 +103,48 @@ export default {
 }
 
 .toggle-button {
-    background: linear-gradient(270deg, #fff 67.35%, #fff0 98.98%, hsla(0, 0%, 100%, 0.477) 0);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 30%, white);
     color: #151542;
-    font-family: Gantari;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 16px;
+    line-height: 1.5;
     padding-left: 32px;
     position: absolute;
     right: 0;
     bottom: 0;
-    text-decoration-line: underline;
-    background-color: white;
+    text-decoration: underline;
     border: none;
     cursor: pointer;
 }
 
 .toggle-button:hover {
     text-decoration: none;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+    .about-search {
+        padding: 20px;
+    }
+    .about-search_heading {
+        font-size: 24px;
+    }
+    .about-search_paragraph {
+        font-size: 15px;
+        
+    }
+    .toggle-button {
+        font-size: 14px;
+    }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+    .about-search_heading {
+        font-size: 26px;
+    }
+    .about-search_paragraph {
+        font-size: 16px;
+    }
 }
 </style>

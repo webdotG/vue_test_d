@@ -110,43 +110,30 @@ export default {
 </script>
 
 <style scoped>
+/* мобилка */
 .header-top {
+  padding: 10px;
   background-color: var(--bg-color-secondary);
-  padding: 10px 10px;
 }
 
 .container {
-    width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
 }
 
-.top-nav{
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.top-nav_link{
-    font-size: var(--font-size-xs);
-    cursor: pointer;
-}
-
-.top-nav_link:hover {
-  color: var(--color-secondary);
-  background: #f8f8f8;
-}
-.top-nav_link svg{
-    width: 15px;
-    height: 15px;
+.top-nav {
+  display: none; 
 }
 
 .top-search {
-margin-left: auto;
   position: relative;
-  display: inline-block;
+  
+  width: 100%;
+  margin-left: 0;
 }
 
 .top-search_input {
@@ -154,6 +141,8 @@ margin-left: auto;
   border: 1px solid var(--b-color-secondary);
   border-radius: 4px;
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -165,39 +154,139 @@ margin-left: auto;
   pointer-events: none;
 }
 
-.top-user{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    gap: 7px;
+.top-user {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  align-items: center;
 }
-.top-user_link svg{
-width: 18px;
-height: 18px;
+
+.top-user_link svg {
+  width: 20px;
+  height: 20px;
 }
-.top-user_link:hover svg{
-    cursor: pointer;
-    /* color: var(--color-secondary); */
+
+.top-user_link:hover svg {
+  cursor: pointer;
 }
-/* Стили для выбора валюты */
+
 .currency-selector {
   position: relative;
-  margin-right: 15px;
 }
 
 .currency-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 5px;
   border-radius: 4px;
   transition: background 0.2s;
 }
+
+.currency-btn span {
+  display: none; 
+}
+
+.currency-btn span.currency-flag {
+  display: inline-block; 
+}
+
+
+/* планшет */
+@media (min-width: 640px) {
+  .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .top-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .top-nav_item {
+    list-style: none;
+  }
+
+  .top-nav_link {
+    font-size: 0; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .top-nav_link svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .top-nav_item:first-child .top-nav_link {
+    font-size: var(--font-size-xs);
+    gap: 5px;
+  }
+
+
+  .top-search {
+    order: 0;
+    width: auto;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .top-search_input {
+    width: 200px;
+  }
+
+  .top-user {
+    gap: 10px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .header-top {
+    padding: 10px 40px;
+  }
+
+  .top-nav {
+    gap: 20px;
+    padding-left: 10px;
+  }
+
+  .top-nav_link {
+    font-size: var(--font-size-xs); 
+    gap: 8px;
+  }
+
+  .top-nav_link:hover {
+    color: var(--color-secondary);
+    background: #f8f8f8;
+  }
+
+  .top-search {
+    margin-right: 20px;
+  }
+
+  .top-user {
+    gap: 15px;
+    padding: 5px 10px;
+  }
+
+  .currency-btn {
+    gap: 8px;
+    padding: 5px 10px;
+  }
+
+  .currency-btn span {
+    display: inline-block; 
+  }
+}
+
+
 
 .currency-btn:hover {
   background: #f5f5f5;
@@ -244,7 +333,6 @@ height: 18px;
   background: #f8f8f8;
 }
 
-/* Стили для флагов */
 .currency-flag {
   display: inline-block;
   width: 16px;

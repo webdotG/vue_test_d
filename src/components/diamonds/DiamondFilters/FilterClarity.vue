@@ -22,25 +22,50 @@ const filterStore = useFilterStore();
 </script>
 
 <style scoped>
+/* мобилка */
 .filter {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
+
 label {
   font-size: 14px;
   font-weight: 500;
   color: #333;
 }
-.filter-select {
-  padding: 8px 12px;
+
+select {
+  width: 100%;
+  padding: 10px 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: white;
+  font-size: 14px;
   cursor: pointer;
 }
-.filter-select:focus {
-  outline: none;
+
+select:hover {
   border-color: #151542;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  label {
+    font-size: 15px;
+  }
+  select {
+    font-size: 15px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  label {
+    font-size: 16px;
+  }
+  select {
+    font-size: 16px;
+  }
 }
 </style>

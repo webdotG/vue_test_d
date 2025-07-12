@@ -43,9 +43,10 @@ export default {
 </script>
 
 <style scoped>
+/* мобилка */
 .breadcrumbs {
-  padding: 10px 0px;
-  font-size: 14px;
+  padding: 10px 0;
+  
 }
 
 .breadcrumbs-list {
@@ -78,8 +79,26 @@ export default {
 }
 
 .breadcrumbs-separator {
-  margin: 0 8px;
+  
   color: #999;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .breadcrumbs {
+    font-size: 13px;
+  }
+  .breadcrumbs-separator {
+    margin: 0 8px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .breadcrumbs {
+    padding: 15px 0;
+    font-size: 14px;
+  }
 }
 </style>
 

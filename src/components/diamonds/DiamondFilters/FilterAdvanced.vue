@@ -88,6 +88,7 @@ const showTooltip = (key) => {
 </script>
 
 <style scoped>
+/* мобилка */
 .advanced-filter-wrapper {
   grid-column: 1 / -1;
   margin-bottom: 10px;
@@ -101,22 +102,35 @@ const showTooltip = (key) => {
   cursor: pointer;
   padding: 5px 0;
   font-size: 14px;
+  width: 100%;
+  text-align: center;
 }
 
 .advanced-filter-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
-  background: #f8f8f8;
+  background: #f0f2f5;
   padding: 15px;
   border-radius: 8px;
   margin-top: 10px;
 }
 
-.checkbox-label {
+.filter-control {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.filter-control input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.filter-control label {
+  font-size: 14px;
+  flex-grow: 1;
   cursor: pointer;
 }
 
@@ -124,20 +138,21 @@ const showTooltip = (key) => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
-  background: #ddd;
-  color: #333;
+  width: 20px;
+  height: 20px;
+  background: #e0e0e0;
+  color: #555;
   border-radius: 50%;
   font-size: 12px;
+  font-style: italic;
   font-weight: bold;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .info-icon:hover {
   background: #151542;
   color: white;
-  pointer-events: auto;
 }
 
 .tooltip-modal {
@@ -146,28 +161,66 @@ const showTooltip = (key) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 15px;
 }
 
 .tooltip-content {
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 8px;
   max-width: 400px;
+  width: 100%;
   position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .close-tooltip {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 10px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
+  color: #888;
+}
+.close-tooltip:hover {
+  color: #000;
+}
+
+.tooltip-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #151542;
+}
+
+.tooltip-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .toggle-advanced-btn {
+    width: auto;
+  }
+  .advanced-filter-content {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .filter-control label {
+    font-size: 15px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .advanced-filter-content {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
 }
 </style>

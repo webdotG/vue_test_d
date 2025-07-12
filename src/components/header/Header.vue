@@ -26,11 +26,39 @@ export default {
 </script>
 
 <style scoped>
+.header {
+  width: 100%;
+}
+
 .header-sticky {
   position: sticky;
   top: 0;
   z-index: 10;
   background-color: white;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.header-promo {
+  display: none; 
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .header-sticky {
+    padding: 0 20px; 
+  }
+
+  .header-promo {
+    display: block; 
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .header-sticky {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

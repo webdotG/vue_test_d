@@ -25,40 +25,66 @@ const filterStore = useFilterStore();
 </script>
 
 <style scoped>
-.price-inputs {
+/* мобилка */
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.range-inputs {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
 }
-.price-input {
+
+input[type="number"] {
   width: 100%;
-  padding: 8px;
+  padding: 10px 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  -moz-appearance: textfield;
 }
-.separator {
-  color: #666;
-}
-.price-slider {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.slider {
-  width: 100%;
-  height: 4px;
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  background: #ddd;
-  border-radius: 2px;
-  outline: none;
+  margin: 0;
 }
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  background: #151542;
-  border-radius: 50%;
-  cursor: pointer;
+
+input:hover {
+  border-color: #151542;
+}
+
+.range-inputs span {
+  color: #888;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  label {
+    font-size: 15px;
+  }
+  input[type="number"] {
+    font-size: 15px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  label {
+    font-size: 16px;
+  }
+  input[type="number"] {
+    font-size: 16px;
+  }
 }
 </style>

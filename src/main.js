@@ -6,5 +6,5 @@ import { createPinia } from 'pinia'
 const app = createApp(App)
 const pinia = createPinia()
 
-app.use(pinia) //перед монтированием
+app.use(pinia) 
 app.mount('#app')

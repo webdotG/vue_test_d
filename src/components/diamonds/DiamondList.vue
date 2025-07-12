@@ -46,19 +46,39 @@ export default {
 </script>
 
 <style scoped>
+/* мобилка */
 .diamond-list {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .loading, .empty {
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
   color: #666;
+  font-size: 1.1rem;
 }
 
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .diamond-list {
+    margin-top: 30px;
+  }
+  .list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 </style>

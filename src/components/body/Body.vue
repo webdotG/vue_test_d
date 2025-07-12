@@ -27,10 +27,26 @@ export default {
 </script>
 
 <style scoped>
+/* мобилка */
 .body {
   padding: 0 15px;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px); 
   background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* планшет */
+@media (min-width: 640px) {
+  .body {
+    padding: 0 20px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .body {
+    padding: 0 40px;
+  }
+}
 </style>

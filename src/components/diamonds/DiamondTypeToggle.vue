@@ -29,29 +29,12 @@ const toggleType = (type) => {
 </template>
 
 <style scoped>
+/* мобилка */
 .diamond-type-toggle {
   background: #f8f8f8;
-  padding: 15px;
+  padding: 10px; 
   border-radius: 8px;
   margin-bottom: 20px;
-}
-
-.toggle-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.toggle-header h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.current-type {
-  font-weight: 600;
-  color: #151542;
 }
 
 .toggle-buttons {
@@ -61,17 +44,45 @@ const toggleType = (type) => {
 
 button {
   flex: 1;
-  padding: 8px 12px;
+  padding: 10px 12px;
   border: 1px solid #ddd;
   background: white;
   cursor: pointer;
   border-radius: 4px;
   transition: all 0.2s;
+  font-size: 14px;
 }
 
 button.active {
   background: #151542;
   color: white;
   border-color: #151542;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .diamond-type-toggle {
+    padding: 15px;
+  }
+  button {
+    font-size: 15px;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .diamond-type-toggle {
+    display: flex;
+    justify-content: center;
+  }
+  .toggle-buttons {
+    display: inline-flex; 
+    width: auto;
+  }
+  button {
+    flex: 0 1 auto; 
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 }
 </style>

@@ -9,7 +9,7 @@
       <div class="specs">
         <div class="spec">
           <span class="label">Carat:</span>
-          <span class="value">{{ diamond.ct }}</span>
+          <span class="value">{{ diamond.ct }}</span>/* No horizontal padding, handled by parent .body */
         </div>
         <div class="spec">
           <span class="label">Color:</span>
@@ -54,6 +54,7 @@ export default {
 </script>
 
 <style scoped>
+/* мобилка */
 .diamond-card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -61,15 +62,17 @@ export default {
   transition: all 0.3s ease;
   cursor: pointer;
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .diamond-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.08);
 }
 
 .image-container {
-  height: 200px;
+  height: 180px;
   overflow: hidden;
 }
 
@@ -86,36 +89,63 @@ export default {
 
 .details {
   padding: 15px;
+  flex-grow: 1;
 }
 
 .title {
-  margin: 0 0 10px 0;
-  font-size: 16px;
+  margin: 0 0 12px 0;
+  font-size: 1rem;
   color: #333;
 }
 
 .specs {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .spec {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .label {
   color: #666;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .value {
   font-weight: 500;
   color: #333;
+  font-size: 0.9rem;
 }
 
 .price {
   color: #151542;
   font-weight: 600;
+  font-size: 1rem;
+}
+
+/* планшет */
+@media (min-width: 640px) {
+  .image-container {
+    height: 200px;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+}
+
+/* десктоп */
+@media (min-width: 1100px) {
+  .image-container {
+    height: 220px;
+  }
+  .title {
+    font-size: 1.15rem;
+  }
+  .label, .value {
+    font-size: 1rem;
+  }
 }
 </style>
